@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :badges
   # Spree routes
   mount Spree::Core::Engine, at: '/'
 
