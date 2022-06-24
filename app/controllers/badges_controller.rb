@@ -1,6 +1,6 @@
 class BadgesController < ApplicationController
 
-  before_action set_badge %i[destroy update edit]
+  # before_action set_badge %i[destroy update edit]
 
   def new
     @badge=Badge.new
@@ -20,6 +20,7 @@ class BadgesController < ApplicationController
   end
 
   def destroy
+    @badge = Badge.find(params[:id])
     @badge.destroy
 
     respond_to do |format|
@@ -28,9 +29,12 @@ class BadgesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @badge = Badge.find(params[:id])
+  end
 
   def update
+    @badge = Badge.find(params[:id])
     respond_to do |format|
       if @badge.update(human_params)
         format.html { redirect_to badge_url(@badge), notice: "Badge was successfully updated." }
@@ -43,7 +47,7 @@ class BadgesController < ApplicationController
   end
 
   def index
-    @badges = Badges.all
+    @badges = Badge.all
   end
 
   private
