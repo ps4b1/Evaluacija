@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :badges
-  resources :badge_products
   # Spree routes
   mount Spree::Core::Engine, at: '/'
-
+  Spree::Core::Engine.add_routes do
+    namespace :admin, path: Spree.admin_path do
+      resources :badges
+      resources :badge_products
+    end
+  end
   # sidekiq web UI
   require 'sidekiq/web'
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
