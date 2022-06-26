@@ -4,6 +4,5 @@ class BadgeProductsController < ApplicationController
   end
 
   def destroy
-
   end
 end
