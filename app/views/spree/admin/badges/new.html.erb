@@ -1,2 +1,10 @@
-<h1>Badges#new</h1>
-<p>Find me in app/views/badges/new.html.erb</p>
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:badges), spree.admin_badges_url %> /
+  <%= Spree.t(:new_badge) %>
+<% end %>
+
+<%= render partial: 'spree/admin/shared/error_messages', locals: { target: @badge } %>
+<%= form_for [:admin, @badge] do |badge_form| %>
+  <%= render partial: 'form', locals: { badge_form: badge_form } %>
+  <%= render partial: 'spree/admin/shared/new_resource_links' %>
+<% end %>
