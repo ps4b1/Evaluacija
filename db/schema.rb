@@ -62,16 +62,6 @@ ActiveRecord::Schema.define(version: 2022_06_23_132852) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "badge_products", force: :cascade do |t|
-    t.bigint "product_id", null: false
-    t.bigint "badge_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_badge_products_on_badge_id"
-    t.index ["product_id", "badge_id"], name: "index_badge_products_on_product_id_and_badge_id", unique: true
-    t.index ["product_id"], name: "index_badge_products_on_product_id"
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.bigint "sluggable_id", null: false
@@ -153,6 +143,16 @@ ActiveRecord::Schema.define(version: 2022_06_23_132852) do
     t.index ["position"], name: "index_spree_assets_on_position"
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+  end
+
+  create_table "spree_badge_products", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_spree_badge_products_on_badge_id"
+    t.index ["product_id", "badge_id"], name: "index_spree_badge_products_on_product_id_and_badge_id", unique: true
+    t.index ["product_id"], name: "index_spree_badge_products_on_product_id"
   end
 
   create_table "spree_badges", force: :cascade do |t|
@@ -1472,8 +1472,8 @@ ActiveRecord::Schema.define(version: 2022_06_23_132852) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "badge_products", "spree_badges", column: "badge_id"
-  add_foreign_key "badge_products", "spree_products", column: "product_id"
+  add_foreign_key "spree_badge_products", "spree_badges", column: "badge_id"
+  add_foreign_key "spree_badge_products", "spree_products", column: "product_id"
   add_foreign_key "spree_oauth_access_grants", "spree_oauth_applications", column: "application_id"
   add_foreign_key "spree_oauth_access_tokens", "spree_oauth_applications", column: "application_id"
 end
