@@ -2,7 +2,7 @@ module Spree
   module Admin
     module ProductsControllerDecorator
       def self.prepended(base)
-        base.before_action :set_badges, only: %i[show new edit]
+        base.before_action :set_badges, only: %i[edit]
       end
       private
       def set_badges
