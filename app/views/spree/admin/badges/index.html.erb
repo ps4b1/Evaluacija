@@ -8,11 +8,17 @@
 
 
 <% if @badges.any? %>
-  <div class="table-responsive border rounded bg-white">
-    <table class="table" id='listing_zones' data-hook>
+  <div class="table-responsive">
+    <table class="table" id='listing_badges'>
+      <thead>
+        <tr>
+          <th><%= Spree.t(:name) %></th>
+          <th class="d-flex justify-content-end mr-3">Actions</th>
+        </tr>
+      </thead>
       <tbody>
       <% @badges.each do |badge| %>
-        <tr id="<%= spree_dom_id badge %>" data-hook="zones_row">
+        <tr id="<%= spree_dom_id badge %>">
           <td><%= badge.name %></td>
 
           <td class="actions">
