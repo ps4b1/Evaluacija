@@ -23,5 +23,5 @@ require 'webdrivers/chromedriver'
 require 'spree_dev_tools/rspec/spec_helper'
 require 'spree/api/testing_support/helpers'
 RSpec.configure do |config|
-  config.include Spree::Api::TestingSupport::Helpers, :type => :controller
+  config.include Spree::Api::TestingSupport::Helpers, type: :controller
 end

@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Spree::Badge, type: :model do
-  let(:badge_one){FactoryBot.create(:badge)}
-  let(:badge_two){FactoryBot.create(:badge)}
+  let(:badge_one) { FactoryBot.create(:badge) }
+  let(:badge_two) { FactoryBot.create(:badge) }
   context 'validation' do
     it 'should be valid' do
       expect(badge_one).to be_valid
     end
     it 'should not be valid without a name' do
-      badge_one.name=nil
+      badge_one.name = nil
       expect(badge_one).not_to be_valid
     end
     it 'should not be valid with a ununique name' do

@@ -8,6 +8,4 @@ RSpec.describe Spree::Product, type: :model do
       should have_many(:badges).through(:badge_products).class_name('Spree::Badge')
     end
   end
-
-
 end

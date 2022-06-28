@@ -33,7 +33,7 @@ group :development, :test do
   gem 'listen'
 
   gem 'rspec_junit_formatter'
-  gem 'factory_bot_rails', :require => false
+  gem 'factory_bot_rails', require: false
   gem 'shoulda-matchers', '~> 5.0'
 
   # monitoring

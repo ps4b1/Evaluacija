@@ -1,6 +1,6 @@
 require 'rails_helper'
 include ControllerMacros
-describe Spree::Admin::BadgesController,type: :controller do
+describe Spree::Admin::BadgesController, type: :controller do
   login_admin
   stub_authorization!
   let(:valid_attributes) do
@@ -25,7 +25,6 @@ describe Spree::Admin::BadgesController,type: :controller do
       expect(response).to be_successful
     end
   end
-
 
   describe 'GET /edit' do
     it 'renders a successful response' do
