@@ -21,3 +21,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 require 'webdrivers/chromedriver'
 require 'spree_dev_tools/rspec/spec_helper'
+require 'spree/api/testing_support/helpers'
+RSpec.configure do |config|
+  config.include Spree::Api::TestingSupport::Helpers, :type => :controller
+end
