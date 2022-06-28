@@ -92,7 +92,7 @@ describe Spree::Admin::BadgesController, type: :controller do
   end
 
   describe 'DELETE /destroy' do
-    it 'destroys the requested post' do
+    it 'destroys the requested Badge' do
       badge = Spree::Badge.new(valid_attributes)
       badge.save
       expect do
@@ -100,7 +100,7 @@ describe Spree::Admin::BadgesController, type: :controller do
       end.to change(Spree::Badge, :count).by(-1)
     end
 
-    it 'redirects to the posts list' do
+    it 'redirects to the Badges index' do
       badge = Spree::Badge.new(valid_attributes)
       badge.save
       delete :destroy, params: { id: badge.id }
