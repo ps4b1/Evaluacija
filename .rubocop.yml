@@ -1,3 +1,6 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
 AllCops:
   # Default formatter will be used if no `-f/--format` option is given.
   DefaultFormatter: progress
@@ -20,7 +23,7 @@ AllCops:
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-AlignParameters:
+ParameterAlignment:
   Enabled: false
 
 ClassLength:
@@ -96,7 +99,7 @@ Naming/VariableNumber:
 Performance/RegexpMatch:
   Enabled: false
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: false
 
 Lint/ParenthesesAsGroupedExpression:

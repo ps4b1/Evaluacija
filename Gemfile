@@ -24,13 +24,17 @@ gem 'awesome_print'
 
 group :development, :test do
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
-
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-performance', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
   gem 'listen'
 
   gem 'rspec_junit_formatter'
+  gem 'factory_bot_rails', :require => false
+  gem 'shoulda-matchers', '~> 5.0'
 
   # monitoring
   gem 'bullet'

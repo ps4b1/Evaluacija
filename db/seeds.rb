@@ -3,8 +3,8 @@
 #
 
 Spree::Webhooks.disable_webhooks do
-  Dir[File.dirname(__FILE__) + '/seeds/*.rb'].sort.each do |file|
-    puts "Seeds #{file} ..."
+  Dir["#{File.dirname(__FILE__)}/seeds/*.rb"].sort.each do |file|
+    Rails.logger.debug "Seeds #{file} ..."
     require file
   end
 end

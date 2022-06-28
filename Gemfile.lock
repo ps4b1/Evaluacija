@@ -197,6 +197,9 @@ GEM
     execjs (2.8.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
+    factory_bot_rails (4.11.1)
+      factory_bot (~> 4.11.1)
+      railties (>= 3.0.0)
     faraday (2.3.0)
       faraday-net_http (~> 2.0)
       ruby2_keywords (>= 0.0.4)
@@ -424,6 +427,9 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.18.0)
       parser (>= 3.1.1.0)
+    rubocop-performance (1.14.2)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     rubocop-rails (2.15.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
@@ -460,6 +466,8 @@ GEM
       ruby_http_client (~> 3.4)
     sentry-raven (3.1.2)
       faraday (>= 1.0)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     sidekiq (6.5.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -657,6 +665,7 @@ DEPENDENCIES
   bullet
   dalli
   dotenv-rails (~> 2.1, >= 2.1.1)
+  factory_bot_rails
   flamegraph
   font_assets
   letter_opener
@@ -672,11 +681,15 @@ DEPENDENCIES
   rails (~> 6.1.4)
   remote_syslog_logger
   rspec_junit_formatter
+  rubocop
+  rubocop-performance
+  rubocop-rails
   sass-rails
   sassc!
   scout_apm
   sendgrid-actionmailer
   sentry-raven
+  shoulda-matchers (~> 5.0)
   sidekiq
   spree (>= 4.4.0)
   spree_auth_devise

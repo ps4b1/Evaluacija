@@ -119,7 +119,7 @@
         <% end %>
       </div>
 
-      <div data-hook="admin_product_form_promotionable">
+      <div>
         <%= f.field_container :badges do %>
           <%= f.label :badges %>
           <%= collection_select(:product, :badge_ids, @badges, :id, :name, {}, { multiple: true, class: 'select2' }) %>
